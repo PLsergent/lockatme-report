@@ -645,21 +645,21 @@ environ)}
 
 \subsection{Xlib}
 Lockatme est un "X locker". C'est-à-dire qu'il fonctionne au niveau du serveur graphique,
-dans ce cas la, \em{X}.
+dans ce cas la, \emph{X}.
 Les versions les plus récentes de plusieurs distributions majeurs de Linux utilisent
-aujourd'hui \em{Wayland} plutôt que \em{X}. Mais \em{X} détient toujours de loin la plus
-grande part d'utilisation. De plus, les programmes codés pour \em{X} fonctionne
-sur \em{Wayland} grâce au programme de compatibilité \em{XWayland}. Le contraire n'est pas
-possible. 
+aujourd'hui \emph{Wayland} plutôt que \emph{X}. Mais \emph{X} détient toujours de loin la plus
+grande part d'utilisation. De plus, les programmes codés pour \emph{X} fonctionne
+sur \emph{Wayland} grâce au programme de compatibilité \emph{XWayland}. Le contraire n'est pas
+possible.
 
-C'est pourquoi nous avons décidé d'utiliser l'API de \em{X} pour notre projet. C'est par
+C'est pourquoi nous avons décidé d'utiliser l'API de \emph{X} pour notre projet. C'est par
 cette API que l'on peut "grab" le clavier et la souris, c'est-à-dire prendre leur contrôle
 et ainsi empêcher leur utilisation en dehors des fonctions souhaitées (délocker le
 locker par mot de passe par exemple).
 
-\em{X} possède en réalité deux API. \em{Xlib} est très utilisée et plutôt
+\emph{X} possède en réalité deux API. \emph{Xlib} est très utilisée et plutôt
 simple dans son design.
-C'est elle que nous avons utilisés. L'API plus récente, \em{XCB}, présente un
+C'est elle que nous avons utilisés. L'API plus récente, \emph{XCB}, présente un
 avantage conséquent de performance sur des grosses applications de par son design
 plus complexe mais ça ne change rien pour nous. De plus l'API est encore
 très partiellement documentée.
@@ -702,7 +702,7 @@ Après de nombreux tests sur l'approche à utiliser. Nous avons finis par abouti
           authenticated.wait()
     \end{minted}
 
-On crée un objet \em{threading.Event} dans le programme principal. Tous les modules
+On crée un objet \emph{threading.Event} dans le programme principal. Tous les modules
 utilisés ont accès à l'objet et peuvent "setter" le flag interne à celui-ci de façon
 à prévenir le proramme principal si l'utilisateur s'est authentifié avec succès.
 Le programme principal attent tout simplement que le flag soit set puis se termine.

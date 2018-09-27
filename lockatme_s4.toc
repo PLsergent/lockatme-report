@@ -30,11 +30,11 @@
 \contentsline {chapter}{\numberline {4}Technologies utilis\IeC {\'e}es}{16}
 \contentsline {section}{\numberline {4.1}Liste des technologies explor\IeC {\'e}es}{17}
 \contentsline {section}{\numberline {4.2}Technologie utilis\IeC {\'e}e \IeC {\textendash } point technique}{17}
-\contentsline {subsection}{\numberline {4.2.1}Xlib \IeC {\textendash } python}{17}
-\contentsline {subsection}{\numberline {4.2.2}Difficult\IeC {\'e} rencontr\IeC {\'e}e - multithreading}{17}
-\contentsline {chapter}{\numberline {5}Version finale}{18}
-\contentsline {section}{\numberline {5.1}Pr\IeC {\'e}sentation}{19}
-\contentsline {section}{\numberline {5.2}Utilisation - mode d'emploi}{19}
-\contentsline {chapter}{\numberline {6}Am\IeC {\'e}lioration possible - conclusion}{20}
-\contentsline {section}{\numberline {6.1}Interface graphique}{21}
-\contentsline {section}{\numberline {6.2}Le futur de lockatme - conclusion}{21}
+\contentsline {subsection}{\numberline {4.2.1}Xlib}{17}
+\contentsline {subsection}{\numberline {4.2.2}Difficult\IeC {\'e}es rencontr\IeC {\'e}e - parallel programming}{17}
+\contentsline {chapter}{\numberline {5}Version finale}{19}
+\contentsline {section}{\numberline {5.1}Pr\IeC {\'e}sentation}{20}
+\contentsline {section}{\numberline {5.2}Utilisation - mode d'emploi}{20}
+\contentsline {chapter}{\numberline {6}Am\IeC {\'e}lioration possible - conclusion}{21}
+\contentsline {section}{\numberline {6.1}Interface graphique}{22}
+\contentsline {section}{\numberline {6.2}Le futur de lockatme - conclusion}{22}
