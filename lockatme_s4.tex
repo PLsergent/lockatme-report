@@ -643,9 +643,70 @@ environ)}
 
 \section{Technologie utilisée – point technique}
 
-\subsection{Xlib – python}
+\subsection{Xlib}
+Lockatme est un "X locker". C'est-à-dire qu'il fonctionne au niveau du serveur graphique,
+dans ce cas la, \em{X}.
+Les versions les plus récentes de plusieurs distributions majeurs de Linux utilisent
+aujourd'hui \em{Wayland} plutôt que \em{X}. Mais \em{X} détient toujours de loin la plus
+grande part d'utilisation. De plus, les programmes codés pour \em{X} fonctionne
+sur \em{Wayland} grâce au programme de compatibilité \em{XWayland}. Le contraire n'est pas
+possible. 
 
-\subsection{Difficulté rencontrée - multithreading}
+C'est pourquoi nous avons décidé d'utiliser l'API de \em{X} pour notre projet. C'est par
+cette API que l'on peut "grab" le clavier et la souris, c'est-à-dire prendre leur contrôle
+et ainsi empêcher leur utilisation en dehors des fonctions souhaitées (délocker le
+locker par mot de passe par exemple).
+
+\em{X} possède en réalité deux API. \em{Xlib} est très utilisée et plutôt
+simple dans son design.
+C'est elle que nous avons utilisés. L'API plus récente, \em{XCB}, présente un
+avantage conséquent de performance sur des grosses applications de par son design
+plus complexe mais ça ne change rien pour nous. De plus l'API est encore
+très partiellement documentée.
+
+La difficultée se trouve dans le fait que contrairement à une bibliothéque/framework
+graphique haut niveau, communiquer avec le serveur graphique directement est
+beaucoup plus compexe et font intervenir des concepts singuliers, pas toujours
+simple à saisir.
+
+\subsection{Difficultées rencontrée - parallel programming}
+Nous souhaitions avoir un locker modulable, qui peut être délocké de plusieurs
+façons différentes selon le choix de l'utilisateur (e.g. facial recognition
++ fingerprint reader). Pour cela il nous a fallut choisir une méthode de programmation
+parallèle entre les trois choix à disposition avec Python, le multi-processing,
+multi-threading ou les coroutines.
+
+Nous avons décidé d'utiliser le multi-threading car elle offrait l'avantage de simplifier
+la communication entre les modules et le programme principal (contrairement aux multi-processing) sans compliquer le code comme le ferait les coroutines.
+
+Après de nombreux tests sur l'approche à utiliser. Nous avons finis par aboutir sur ce code:
+
+  \begin{minted}{python}
+      def add_event(func, event, args_dict):
+          def f():
+              func(**args_dict)
+              event.set()
+
+          return f
+
+
+      def auth_loop():
+          authenticated = Event()
+          auth_functions = get_modules_auth_functions()
+
+          for auth_function, options in auth_functions:
+              authenticate = add_event(auth_function, authenticated, options)
+              t = Thread(target=authenticate)
+              t.start()
+
+          authenticated.wait()
+    \end{minted}
+
+On crée un objet \em{threading.Event} dans le programme principal. Tous les modules
+utilisés ont accès à l'objet et peuvent "setter" le flag interne à celui-ci de façon
+à prévenir le proramme principal si l'utilisateur s'est authentifié avec succès.
+Le programme principal attent tout simplement que le flag soit set puis se termine.
+
 
 \chapter{Version finale}
 
