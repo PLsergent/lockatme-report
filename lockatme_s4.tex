@@ -144,11 +144,13 @@ ont réalisé ce dernier. Cela possède de nombreux avantages : possibilité pou
 la communauté de contribuer au projet au travers de modifications du code,
 commentaires, rapport de bug, \ldots
 
-\chapter{Stratégie de développement}
+\chapter{Gestion de projet}
 
 \newpage
 
-\section{Méthodologie voulue}
+\section{Stratégie de développement}
+
+\subsection{Méthodologie voulue}
 Lors de la réalisation du cahier des charges, nous avions réfléchi à la mise en
 place d'une méthodologie agile: SCRUM, afin de conserver une bonne visibilité sur le
 projet. Ainsi nous souhaitions réaliser des cycles; un cycle correspondant au
@@ -161,9 +163,9 @@ paraître à la fin de chaque cycle une nouvelle version. Pour cela l'idée éta
 d'utiliser un service de décentralisation basé sur Git (GitHub), pour pouvoir merged les
 différentes branches dans la branche master.
 
-\section{Application réelle au projet}
+\subsection{Application réelle au projet}
 La réalisation du projet en lui même à nécessité de longues heures de recherches
-individuelles, notamment pour lire de la documentation et faire des "boûts" de
+individuelles (\emph{cf. 2.2.2 Liste des tâches}), notamment pour lire de la documentation et faire des "boûts" de
 code afin de mieux cerner ce que nous allions faire. C'est pourquoi la phase de développement à
 été plus courte que prévue.
 \\
@@ -181,29 +183,27 @@ Pour ce qui est de la méthode SCRUM, nous avons mis en place des sprints de une
 l'occasion des stand-ups, afin de fermer les tickets résolus et d’ouvrir de
 nouveaux tickets pour le sprint d’après. Les outils qui nous ont servi
 pour exploiter le potentiel de cette méthodologie
-sont \emph{Taiga} pour le suivi et la gestion des tickets et \emph{Discord}
-pour la communication par message ou vidéo.
+sont \emph{Taiga} pour le suivi et la gestion des tickets (\emph{cf. Annexe ~\ref{fig:Taiga}})
+et \emph{Discord} pour la communication par message ou vidéo.
 \\
 \\
-L'intégration continue a aussi été plus ou moins mise en place. Nous avons bien
+L'intégration continue a aussi été mise en place. Nous avons bien
 utilisé GitHub pour la mise en commun du travail. Chacun travaillant sur sa
 branche. Cependant, de beaucoup de recherche résultait assez peu de code. Il
 était donc difficile de séparer les tâches sur plusieurs branches pour ensuite
 merge sur master. La plupart du temps c'etait donc le chef du projet qui
 implémentait les features, en se basant sur les recherches de tout le monde.
 
-\chapter{Phase du projet – distribution des tâches}
+\section{Phases du projet – distribution des tâches}
 
-\newpage
-
-\section{Rétrospective - diagramme de Gantt specification}
+\subsection{Rétrospective - diagramme de Gantt specification}
 Voici ci dessous le diagramme de Gantt que nous avions réalisé lors du cahier
 des charges pour le S2:
 
-\begin{figure}[h]\label{fig:gantt.png}
+\begin{figure}[h]\label{fig:gantt}
   \includegraphics[width=\linewidth]{Gantt}
   \caption{diagramme de Gantt}
-  \label{fig:gantt.png}
+  \label{fig:gantt}
 \end{figure}
 
 Etant donnée que le sujet était très complexe et comportait de nombreuses zones
@@ -227,17 +227,17 @@ entre l'ancien diagramme et le déroulement réel. A savoir :
 \end{itemize}
 \vspace{0.5cm}
 
-\section{Répartition réalisée}
+\subsection{Répartition réalisée}
 
-\subsection{Difficultés rencontrées}
-Comme dit auparavant, de nombreuses difficulté ont été rencontré plus tôt que prévu.
+\subsubsection{Difficultés rencontrées}
+Comme dit auparavant, de nombreuses difficultés ont été rencontrées plus tôt que prévu.
 Voici une liste exhaustive de celles-ci :
 
 \vspace{0.5cm}
 \begin{itemize}[label=\textbullet, font=\normalfont \color{blue}]
   \item{\textbf{Répartition des recherches}}\\
 Le sujet abordé était très technique et précis, il nécessitait donc beaucoup de
-recherche. Mais la répartition était plutôt compliqué étant donnée que idéalement
+recherche. Mais la répartition était plutôt compliquée étant donné que idéalement
 il aurait fallu que tout le monde possède une connaissance globale des technologies,
 qui pouvait théoriquement nous servir pour le développement.\\
 
@@ -272,9 +272,9 @@ Evidemment vu la liste qui est en train d'être faite, il est assez simple de de
 que cette phase à été bien compliqué pour certains membres du groupe, qui ont pu
 prendre du retard dans la compréhension de l'avancement. Mais il était quand même
 important de tenir tout le monde informé, notamment à travers des réunions régulières.
-Il a également été décidé, que les personnes, pour qui la partie développement pure
-était trop complexe, se verraient attibuer des tâches lié à la gestion, au déploiement
-ou à la présentation du projet. Toutefois il est essentiel que chaque membre ait
+La part de développement de chacun était inégale, mais il était essentiel que
+tout le monde apporte sa contribution au projet. De plus les personnes moins à l'aise
+compensaient avec des tâches liées à la gestion du projet. De plus il est essentiel que chaque membre ait
 connaissance des aspects techniques de l'application.\\
 
   \item{\textbf{Répartition des tâches lors du développement}}\\
@@ -282,12 +282,17 @@ En lien avec le point précédent et avec un paragraphe du 2.2, dans le dévelop
 final il y avait assez peu de code (même si très complexe). Il n'y avait pas de
 séparation possible avec differentes couches, comme peu nous offrir le modèle MVC
 par exemple. C'est donc essentiellement le chef de groupe qui a implémenté la partie
-finale. Cependant les recherches de chacuns ont été prise en compte.\\
+finale(\emph{cf. 2.2.2 Liste des tâches}). Cela ne veut pas dire qu'il a fait tout
+le travail étant donné que les recherches de chacuns ont été prises en compte. Il
+faut garder à l'esprit que dans ce projet la partie de reflexion et de recherche
+représente 90\% du temps de travail.\\
 
 \end{itemize}
 
-\subsection{Chronologie}
-\subsubsection{Quelles recherches?}
+\subsubsection{Chronologie}
+
+\vspace{0.5cm}
+\textbf{Quelles recherches?}\\
 
   L’idée de la reconnaissance faciale nous était venu d’un article de magazine,
   ainsi la documentation sur cette algorithme est très abondante avec de
@@ -299,8 +304,10 @@ finale. Cependant les recherches de chacuns ont été prise en compte.\\
 \\ \\
   L’ensemble du groupe s’est donc plongé dans cette recherche.
 
-  \subsubsection{PAM: Pluggable Authentication Modules} \emph{(Bruno, David,
-  Pierre-Louis, travail en parallèle de Python into C)}\\ \\
+  \vspace{0.5cm}
+
+  \textbf{PAM: Pluggable Authentication Modules} \emph{(Bruno, David,
+  Pierre-Louis, travail en parallèle de Python into C)}\\\\
 En nous penchant sur des applications de lock sous Linux, tel que i3lock,
 lightDM, nous nous sommes rendus compte qu’elles utilisent toute PAM.
 Ce dernier permet à travers de configs files, contenant des modules, de
@@ -465,7 +472,9 @@ int main(int argc, char *argv[]) {
     \end{minted}
   \end{itemize}
 
-  \subsubsection{Utilisation}
+  \vspace{0.5cm}
+
+  \textbf{Utilisation}\\
 
   Suite à cette phase de recherche, nous commençons à tester un programme en C
   tout simple. Il prend en argument un nom d’utilisateur, le programme fait
@@ -492,7 +501,9 @@ reconnaissance faciale ou mot de passe. Nous avions donc un locker fonctionnel,
 qui laisse le choix à l’utilisateur de déverrouiller par reconnaissance faciale
 ou par mot de passe.
 
-  \subsubsection{Problèmes}
+\vspace{0.5cm}
+
+  \textbf{Problèmes}\\
 
   Cependant cela n’était pas satisfaisant, malgré les nombreuses heures pour
   arriver à un tel résultat. Nous n’utilisions pas notre algorithme de
@@ -511,7 +522,9 @@ ou par mot de passe.
     \item{Le reste du groupe travaillant à l’écriture d’un locker en C.}
   \end{itemize}
 
-  \subsubsection{Python into C}
+  \vspace{0.5cm}
+
+  \textbf{Python into C}\\
 
   Il existe effectivement une bibliothèque en C qui permet d’intégrer du
   Python dans le code: Python.h.
@@ -556,7 +569,9 @@ int main () {
 }
   \end{minted}
 
-  \subsubsection{Locker}
+  \vspace{0.5cm}
+
+  \textbf{Locker}\\
 
   Lors des recherches pour écrire le locker, nous nous sommes inspiré de la même
   application que celle utilisée auparavant, pour ajouter la solution de
@@ -572,7 +587,9 @@ int main () {
   En parallèle les recherches sur Python.h montre qu’il est difficile
   d’utiliser cette bibliothèque pour écrire un module PAM.
 
-  \subsubsection{Abandon de PAM}
+  \vspace{0.5cm}
+
+  \textbf{Abandon de PAM}\\
 
   Notre but étant de faire une application en Python nous avons donc pris à ce
   moment un virage très serré en abandonnant l’idée d’utiliser PAM pour le
@@ -582,17 +599,21 @@ int main () {
   simple. Cette solution correspondait mieux à l’esprit du
   projet.
 
-  \subsubsection{Xlib}
+  \vspace{0.5cm}
+
+  \textbf{Xlib}\\
 
   Suite à ce virage compliqué il était difficile de bien répartir les tâches.
   Chacun à donc réalisé des recherches sur Xlib et sur les bindings mais la
   répartition compliquée et la difficulté de la tâche restante c’est
   Bruno notre chef de projet qui a implémenté la version finale de lockatme en
   rassemblant les connaissances réunis par le groupe et en utilisant
-  l’algorithme de reconnaissance faciale du S2. Ce point sera développé dans le
-  4.
+  l’algorithme de reconnaissance faciale du S2 (\emph{cf. Annexe}).
+  Ce point sera développé dans le 4.
 
-\subsection{Liste des tâches approximative}
+  \vspace{0.5cm}
+
+\textbf{Liste des tâches}\\
 
 Liste tâches:
   \begin{itemize}[label=\textbullet, font=\normalfont \color{blue}]
@@ -603,14 +624,16 @@ Liste tâches:
   \item{Programme test python into C: Sagar et Matthieu (8h)}
   \item{Travail compréhension locker: Bruno, David et Pierre-Louis (10h chacun)}
   \item{Travail écriture module Python into C: Bruno et Sagar (5h)}
-  \item{Modification locker pour reconnaissance faciale: Pierre-Louis et Matthieu (10h
-environ)}
+  \item{Modification locker pour reconnaissance faciale: Pierre-Louis et Matthieu (10h)}
   \item{Recherche Xlib: Bruno et Pierre-Louis (10h et 3h)}
   \item{Implémentation finale: Bruno (20h)}
   \item{Rédaction README: Sagar (4h)}
   \item{Rédaction compte rendu final: Pierre-Louis et Bruno (10h)}
   \item{Slides présentation finale: Sagar et Matthieu (6h)}
 \end{itemize}
+
+\vspace{0.5cm}
+Bruno : 55h, Pierre-Louis : 45h, David : 30h, Sagar : 18h, Matthieu : 15h
 
 
 \chapter{Technologies utilisées}
@@ -643,14 +666,26 @@ environ)}
 
 \section{Technologie utilisée – point technique}
 
-\subsection{Xlib}
-Lockatme est un "X locker". C'est-à-dire qu'il fonctionne au niveau du serveur graphique,
-dans ce cas la, \emph{X}.
+\subsection{Xlib - présentation}
+
+Xlib est le nom d'une bibliothèque logicielle, offrant une implémentation de la
+partie cliente du protocole \emph{X Window System} en C. Elle contient des fonctions
+de bas niveau pour interagir avec un serveur \emph{X}. Ces fonctions permettent aux
+programmeurs d'écrire des programmes sans connaître les détails du protocole \emph{X}.
+Peu d'applications utilisent la Xlib directement ; en général, elles exploitent
+d'autres bibliothèques qui reposent sur la Xlib pour fournir des éléments
+d'une interface graphique.\\
+Cette bibliothèque est apparue autour de 1985.\\\\
 Les versions les plus récentes de plusieurs distributions majeurs de Linux utilisent
 aujourd'hui \emph{Wayland} plutôt que \emph{X}. Mais \emph{X} détient toujours de loin la plus
 grande part d'utilisation. De plus, les programmes codés pour \emph{X} fonctionne
 sur \emph{Wayland} grâce au programme de compatibilité \emph{XWayland}. Le contraire n'est pas
 possible.
+
+\subsection{Utilisation dans le projet}
+
+Lockatme est un "X locker". C'est-à-dire qu'il fonctionne au niveau du serveur graphique,
+dans ce cas la, \emph{X}.
 
 C'est pourquoi nous avons décidé d'utiliser l'API de \emph{X} pour notre projet. C'est par
 cette API que l'on peut "grab" le clavier et la souris, c'est-à-dire prendre leur contrôle
@@ -751,5 +786,56 @@ la session active.
 \section{Interface graphique}
 
 \section{Le futur de lockatme - conclusion}
+
+\chapter*{Annexe}
+
+\begin{figure}[h]\label{fig:Taiga}
+  \includegraphics[width=\linewidth]{taiga2}
+  \caption{Exemple utilisation taiga}
+  \label{fig:Taiga}
+\end{figure}
+
+\begin{figure}[h]\label{fig:Taiga}
+  \includegraphics[width=\linewidth]{taiga}
+  \caption{Exemple utilisation taiga}
+  \label{fig:Taiga}
+\end{figure}
+
+\newpage
+
+\begin{minted}{python}
+  import face_recognition as face
+  import cv2
+
+
+  def is_recognized(model_image_path, test_image):
+      model_image = face.load_image_file(model_image_path)
+
+      model_face_encoding = face.face_encodings(model_image)[0]
+      test_face_locations = face.face_locations(test_image)
+      test_face_encodings = face.face_encodings(test_image, test_face_locations)
+
+      known_faces = [
+          model_face_encoding
+      ]
+
+      matches = []
+      for _, face_encoding in zip(test_face_locations, test_face_encodings):
+          matches.append(face.compare_faces(known_faces, face_encoding, tolerance=0.6))
+
+      return any(matches)
+
+
+  def authenticate(path):
+      camera = cv2.VideoCapture(0)
+
+      while True:
+          _, shot = camera.read()
+          shot = shot[:, :, ::-1]  # Conversion from BGR to RGB
+          if is_recognized(path, shot):
+              camera.release()
+              cv2.destroyAllWindows()
+              return
+\end{minted}
 
 \end{document}
