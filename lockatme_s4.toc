@@ -25,9 +25,10 @@
 \contentsline {subsection}{\numberline {3.2.1}Xlib - pr\IeC {\'e}sentation}{16}
 \contentsline {subsection}{\numberline {3.2.2}Utilisation dans le projet}{16}
 \contentsline {subsection}{\numberline {3.2.3}Difficult\IeC {\'e}es rencontr\IeC {\'e}e - parallel programming}{17}
+\contentsline {subsection}{\numberline {3.2.4}Upload package Pip}{17}
 \contentsline {chapter}{\numberline {4}Version finale}{18}
 \contentsline {section}{\numberline {4.1}Pr\IeC {\'e}sentation}{19}
 \contentsline {section}{\numberline {4.2}Utilisation - mode d'emploi}{19}
-\contentsline {chapter}{\numberline {5}Am\IeC {\'e}lioration possible - conclusion}{20}
-\contentsline {section}{\numberline {5.1}Interface graphique}{21}
-\contentsline {section}{\numberline {5.2}Le futur de lockatme - conclusion}{21}
+\contentsline {chapter}{\numberline {5}Am\IeC {\'e}lioration possible - conclusion}{21}
+\contentsline {section}{\numberline {5.1}Interface graphique}{22}
+\contentsline {section}{\numberline {5.2}Le futur de lockatme - conclusion}{22}
