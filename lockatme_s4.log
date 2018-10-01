@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Arch Linux) (preloaded format=pdflatex 2018.9.6)  30 SEP 2018 20:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Arch Linux) (preloaded format=pdflatex 2018.9.6)  1 OCT 2018 09:30
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1003,7 +1003,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 167--196
 
  []
 
-<img/Gantt.png, id=34, 1016.79875pt x 553.06625pt>
+<img/Gantt.png, id=35, 1016.79875pt x 553.06625pt>
 File: img/Gantt.png Graphic file (type png)
 <use img/Gantt.png>
 Package pdftex.def Info: img/Gantt.png  used on input line 204.
@@ -1061,7 +1061,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 309--317
 
  []
 
-<img/pam.jpg, id=46, 352.6776pt x 220.4235pt>
+<img/pam.jpg, id=47, 352.6776pt x 220.4235pt>
 File: img/pam.jpg Graphic file (type jpg)
 <use img/pam.jpg>
 Package pdftex.def Info: img/pam.jpg  used on input line 320.
@@ -1194,7 +1194,7 @@ Chapitre 3.
 [15
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 670--683
+Underfull \hbox (badness 10000) in paragraph at lines 671--684
 
  []
 
@@ -1213,7 +1213,7 @@ File: lstlang1.sty 2018/09/02 1.7 listings language file
 (/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2018/09/02 1.7 listings language file
 )
-Underfull \hbox (badness 10000) in paragraph at lines 767--770
+Underfull \hbox (badness 10000) in paragraph at lines 770--773
 
  []
 
@@ -1222,15 +1222,15 @@ Chapitre 5.
 [20
 
 ] [21]
-<img/taiga2.png, id=94, 1842.885pt x 764.8575pt>
+<img/taiga2.png, id=95, 1842.885pt x 764.8575pt>
 File: img/taiga2.png Graphic file (type png)
 <use img/taiga2.png>
-Package pdftex.def Info: img/taiga2.png  used on input line 792.
+Package pdftex.def Info: img/taiga2.png  used on input line 795.
 (pdftex.def)             Requested size: 419.16621pt x 173.9645pt.
-<img/taiga.png, id=95, 1840.8775pt x 735.74875pt>
+<img/taiga.png, id=96, 1840.8775pt x 735.74875pt>
 File: img/taiga.png Graphic file (type png)
 <use img/taiga.png>
-Package pdftex.def Info: img/taiga.png  used on input line 798.
+Package pdftex.def Info: img/taiga.png  used on input line 801.
 (pdftex.def)             Requested size: 419.16621pt x 167.52342pt.
  [22
 
@@ -1247,11 +1247,11 @@ runsystem(rm lockatme_s4.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 22208 strings out of 492642
- 435991 string characters out of 6135567
- 762655 words of memory out of 5000000
- 25666 multiletter control sequences out of 15000+600000
- 19942 words of font info for 46 fonts, out of 8000000 for 9000
+ 22212 strings out of 492642
+ 436038 string characters out of 6135567
+ 762661 words of memory out of 5000000
+ 25668 multiletter control sequences out of 15000+600000
+ 20706 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  54i,6n,85p,847b,1103s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/usr/share/
@@ -1262,15 +1262,16 @@ cm-super/sfbx1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx14
 are/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf-dist/
 fonts/type1/public/cm-super/sfcc1000.pfb></usr/share/texmf-dist/fonts/type1/pub
 lic/cm-super/sfit1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sf
-rm0700.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></us
-r/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-d
-ist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/share/texmf-dist/fonts/type1
-/public/cm-super/sfti1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-supe
-r/sftt1000.pfb>
-Output written on lockatme_s4.pdf (24 pages, 495746 bytes).
+rm0700.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></us
+r/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf-d
+ist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts/type1
+/public/cm-super/sfrm1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-supe
+r/sfti1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
+
+Output written on lockatme_s4.pdf (24 pages, 512073 bytes).
 PDF statistics:
- 151 PDF objects out of 1000 (max. 8388607)
- 103 compressed objects within 2 object streams
+ 155 PDF objects out of 1000 (max. 8388607)
+ 106 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  33 words of extra memory for PDF output out of 10000 (max. 10000000)
 

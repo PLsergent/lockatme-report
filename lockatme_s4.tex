@@ -712,10 +712,10 @@ parallèle entre les trois choix à disposition avec Python, le multi-processing
 multi-threading ou les coroutines.
 
 Nous aurions pu utiliser le multi-processing tout comme le multi-threading mais avons donc
-opté pour le multi-threading pour utiliser moins de ressources.
-la communication entre les modules et le programme principal (contrairement au
-multi-processing) sans compliquer le code comme le ferait les coroutines.
-
+opté pour le multi-threading (processus légers) pour utiliser moins de ressources.\\
+Quant aux coroutines, nous avons décidé de ne pas utiliser ce processus car l'implémentation
+était bien plus compliquée.
+\\
 Après de nombreux tests sur l'approche à utiliser. Nous avons finis par aboutir sur ce code:
 
   \begin{minted}{python}
