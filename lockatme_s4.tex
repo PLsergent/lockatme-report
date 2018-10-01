@@ -711,8 +711,10 @@ façons différentes selon le choix de l'utilisateur (e.g. facial recognition
 parallèle entre les trois choix à disposition avec Python, le multi-processing,
 multi-threading ou les coroutines.
 
-Nous avons décidé d'utiliser le multi-threading car elle offrait l'avantage de simplifier
-la communication entre les modules et le programme principal (contrairement aux multi-processing) sans compliquer le code comme le ferait les coroutines.
+Nous aurions pu utiliser le multi-processing tout comme le multi-threading mais avons donc
+opté pour le multi-threading pour utiliser moins de ressources.
+la communication entre les modules et le programme principal (contrairement au
+multi-processing) sans compliquer le code comme le ferait les coroutines.
 
 Après de nombreux tests sur l'approche à utiliser. Nous avons finis par aboutir sur ce code:
 
