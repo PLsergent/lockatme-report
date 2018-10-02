@@ -777,12 +777,22 @@ L'application possède tout de même quelques points faibles en ce qui concerne 
 sécurité et la rapidité de la reconnaissance, assez lente à cause des webcams
 d'ordinateur, souvent moins performante.
 
+\section{Structure du projet}
+Lockatme se découpe en plusieurs fichier. Le fichier __main__.py est un fichier
+spécial en Python, il est le point d'entrée de notre programme. Le fichier cli.py
+définit le comportement de la commande "lockatme", c'est-à-dire, les différents
+arguments et options disponibles.
+Le fichier lock.py contient la fonction de locking qui fait appel à Xlib.
+Le fichier auth.py s'occupe de lire le fichier de configuration de l'utilisateur
+puis de lancer les différents threads, chacun faisant appel à la fonction
+d'authentification d'un module. Ces fonctions sont définites dans le
+fichier du nom du module, dans le dossier unlockers (e.g. unlockers/password.py).
+
 \begin{figure}[h]\label{fig:tree}
   \includegraphics[width=\linewidth]{tree}
   \caption{Arborescence du projet}
   \label{fig:tree}
 \end{figure}
-
 
 \section{Utilisation - mode d'emploi}
 Le détail de l'utilisation de lockatme est présent sur le repository GitHub :\\
