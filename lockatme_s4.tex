@@ -754,9 +754,6 @@ utilisés ont accès à l'objet et peuvent "setter" le flag interne à celui-ci 
 à prévenir le proramme principal si l'utilisateur s'est authentifié avec succès.
 Le programme principal attent tout simplement que le flag soit set puis se termine.
 
-\subsection{Upload package Pip}
-
-
 \chapter{Version finale}
 
 \newpage
@@ -778,18 +775,20 @@ sécurité et la rapidité de la reconnaissance, assez lente à cause des webcam
 d'ordinateur, souvent moins performante.
 
 \section{Structure du projet}
-Lockatme se découpe en plusieurs fichier. Le fichier __main__.py est un fichier
+Lockatme se découpe en plusieurs fichier. Le fichier \_\_main\_\_.py est un fichier
 spécial en Python, il est le point d'entrée de notre programme. Le fichier cli.py
 définit le comportement de la commande "lockatme", c'est-à-dire, les différents
 arguments et options disponibles.
-Le fichier lock.py contient la fonction de locking qui fait appel à Xlib.
+Le fichier lock.py contient la fonction de locking qui fait appel à Xlib (\emph{cf. Annexe}).
 Le fichier auth.py s'occupe de lire le fichier de configuration de l'utilisateur
 puis de lancer les différents threads, chacun faisant appel à la fonction
 d'authentification d'un module. Ces fonctions sont définites dans le
 fichier du nom du module, dans le dossier unlockers (e.g. unlockers/password.py).
 
 \begin{figure}[h]\label{fig:tree}
-  \includegraphics[width=\linewidth]{tree}
+\begin{center}
+  \includegraphics[width=80mm,scale=0.5]{tree}
+\end{center}
   \caption{Arborescence du projet}
   \label{fig:tree}
 \end{figure}
@@ -822,6 +821,24 @@ la session active.
 \newpage
 
 \section{Interface graphique}
+Une des grosses features qui n'est pas présente à la fin du projet est l'interface
+graphique. Cependant pour nous cette aspect n'était pas essentiel étant donné le public ciblé.
+En effet ce locker s'adresse surtout à des utilisateurs "geek" qui sont habitués à
+l'utilisation de la CLI sur Linux. Nous avons donc consacré tout notre temps à
+la fiabilité, à la sécurité du logiciel, et à l'élégance du code.\\\\
+Cependant, il serait intéressant tout de même de rendre le logiciel customisable.
+Dans un premier temps en ajoutant la possibilité de choisir une image de verrouillage.
+Et ensuite d'ajouter une interface graphique qui gère tout de A à Z: choix des options
+de verrouillage, choix de la photo modèle (prise en direct avec la webcam), choix de
+l'image de verrouillage, thèmes, etc...\\
+Cependant l'implémentation d'une telle interface (surtout pour la partie \emph{face trainer})
+semble être pour le moment en dehors de notre portée.
+
+\begin{figure}[h]\label{fig:facetrain}
+  \includegraphics[width=\linewidth]{facetrain}
+  \caption{Exemple utilisation d'un face trainer}
+  \label{fig:facetrain}
+\end{figure}
 
 \section{Le futur de lockatme - conclusion}
 
@@ -842,6 +859,7 @@ la session active.
 \newpage
 
 \begin{minted}{python}
+#=====facial_recognition.py=====
   import face_recognition as face
   import cv2
 
@@ -874,6 +892,45 @@ la session active.
               camera.release()
               cv2.destroyAllWindows()
               return
+\end{minted}
+
+\newpage
+
+\begin{minted}{python}
+#=====lock.py=====#
+from Xlib import X, display
+
+
+def lock_screen(display: display.Display, screen_nb: int):
+  screen = display.screen(screen_nb)
+  root = screen.root
+  display_width = screen.width_in_pixels
+  display_height = screen.height_in_pixels
+
+  window = root.create_window(0, 0, display_width, display_height,
+                              0, screen.root_depth, window_class=X.CopyFromParent,
+                              visual=screen.root_visual,
+                              override_redirect=1, background_pixel=screen.black_pixel)
+
+  pixmap = window.create_pixmap(8, 8, 1)
+  invisible_cursor = pixmap.create_cursor(pixmap, (0, 0, 0), (0, 0, 0), 0, 0)
+  window.change_attributes(cursor=invisible_cursor) # what XDefineCursor does under the hood
+
+  pointer_mask = X.ButtonPressMask | X.ButtonReleaseMask | X.PointerMotionMask
+  window.grab_pointer(False, event_mask=pointer_mask,
+                      pointer_mode=X.GrabModeAsync, keyboard_mode=X.GrabModeAsync,
+                      confine_to=X.NONE, cursor=invisible_cursor, time=X.CurrentTime)
+
+  window.grab_keyboard(True, pointer_mode=X.GrabModeAsync,
+                       keyboard_mode=X.GrabModeAsync, time=X.CurrentTime)
+  window.map()
+
+
+def lock(display: display.Display):
+  for screen in range(display.screen_count()):
+      lock_screen(display, screen)
+  display.sync()
+
 \end{minted}
 
 \end{document}
