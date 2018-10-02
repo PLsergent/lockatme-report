@@ -1,0 +1,98 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{}=====setup.py=====}
+\PYG{c+c1}{\PYGZsh{}!/usr/bin/env python}
+\PYG{k+kn}{import} \PYG{n+nn}{os}
+\PYG{k+kn}{import} \PYG{n+nn}{sys}
+\PYG{k+kn}{from} \PYG{n+nn}{shutil} \PYG{k+kn}{import} \PYG{n}{rmtree}
+
+\PYG{k+kn}{from} \PYG{n+nn}{setuptools} \PYG{k+kn}{import} \PYG{n}{find\PYGZus{}packages}\PYG{p}{,} \PYG{n}{setup}\PYG{p}{,} \PYG{n}{Command}
+
+\PYG{n}{install\PYGZus{}requires} \PYG{o}{=} \PYG{p}{[}
+  \PYG{l+s+s1}{\PYGZsq{}python\PYGZhy{}xlib\PYGZsq{}}
+\PYG{p}{]}
+\PYG{n}{facial\PYGZus{}recognition} \PYG{o}{=} \PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}opencv\PYGZhy{}python\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}dlib\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}face\PYGZhy{}recognition\PYGZsq{}}\PYG{p}{]}
+\PYG{n}{pam\PYGZus{}password} \PYG{o}{=} \PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}pamela\PYGZsq{}}\PYG{p}{]}
+\PYG{n}{install\PYGZus{}requires} \PYG{o}{+=} \PYG{n}{facial\PYGZus{}recognition} \PYG{o}{+} \PYG{n}{pam\PYGZus{}password}
+
+\PYG{n}{tests\PYGZus{}require} \PYG{o}{=} \PYG{p}{[}
+  \PYG{l+s+s1}{\PYGZsq{}pytest\PYGZsq{}}
+\PYG{p}{]}
+
+\PYG{n}{here} \PYG{o}{=} \PYG{n}{os}\PYG{o}{.}\PYG{n}{path}\PYG{o}{.}\PYG{n}{abspath}\PYG{p}{(}\PYG{n}{os}\PYG{o}{.}\PYG{n}{path}\PYG{o}{.}\PYG{n}{dirname}\PYG{p}{(}\PYG{n+nv+vm}{\PYGZus{}\PYGZus{}file\PYGZus{}\PYGZus{}}\PYG{p}{))}
+
+\PYG{k}{with} \PYG{n+nb}{open}\PYG{p}{(}\PYG{n}{os}\PYG{o}{.}\PYG{n}{path}\PYG{o}{.}\PYG{n}{join}\PYG{p}{(}\PYG{n}{here}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}README.rst\PYGZsq{}}\PYG{p}{))} \PYG{k}{as} \PYG{n}{f}\PYG{p}{:}
+  \PYG{n}{long\PYGZus{}description} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{\PYGZsq{}} \PYG{o}{+} \PYG{n}{f}\PYG{o}{.}\PYG{n}{read}\PYG{p}{()}
+
+\PYG{n}{about} \PYG{o}{=} \PYG{p}{\PYGZob{}\PYGZcb{}}
+\PYG{k}{with} \PYG{n+nb}{open}\PYG{p}{(}\PYG{n}{os}\PYG{o}{.}\PYG{n}{path}\PYG{o}{.}\PYG{n}{join}\PYG{p}{(}\PYG{n}{here}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}lockatme/\PYGZus{}\PYGZus{}version\PYGZus{}\PYGZus{}.py\PYGZsq{}}\PYG{p}{))} \PYG{k}{as} \PYG{n}{f}\PYG{p}{:}
+  \PYG{k}{exec}\PYG{p}{(}\PYG{n}{f}\PYG{o}{.}\PYG{n}{read}\PYG{p}{(),} \PYG{n}{about}\PYG{p}{)}
+
+
+\PYG{k}{class} \PYG{n+nc}{UploadCommand}\PYG{p}{(}\PYG{n}{Command}\PYG{p}{):}
+  \PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}Support setup.py upload.\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+
+  \PYG{n}{description} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}Build and publish the package.\PYGZsq{}}
+  \PYG{n}{user\PYGZus{}options} \PYG{o}{=} \PYG{p}{[]}
+
+  \PYG{n+nd}{@staticmethod}
+  \PYG{k}{def} \PYG{n+nf}{status}\PYG{p}{(}\PYG{n}{s}\PYG{p}{):}
+      \PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}Prints things in bold.\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+      \PYG{k}{print}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+se}{\PYGZbs{}033}\PYG{l+s+s1}{[1m\PYGZob{}0\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}033}\PYG{l+s+s1}{[0m\PYGZsq{}}\PYG{o}{.}\PYG{n}{format}\PYG{p}{(}\PYG{n}{s}\PYG{p}{))}
+
+  \PYG{k}{def} \PYG{n+nf}{initialize\PYGZus{}options}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{):}
+      \PYG{k}{pass}
+
+  \PYG{k}{def} \PYG{n+nf}{finalize\PYGZus{}options}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{):}
+      \PYG{k}{pass}
+
+  \PYG{k}{def} \PYG{n+nf}{run}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{):}
+      \PYG{k}{try}\PYG{p}{:}
+          \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{status}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Removing previous builds…\PYGZsq{}}\PYG{p}{)}
+          \PYG{n}{rmtree}\PYG{p}{(}\PYG{n}{os}\PYG{o}{.}\PYG{n}{path}\PYG{o}{.}\PYG{n}{join}\PYG{p}{(}\PYG{n}{here}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}dist\PYGZsq{}}\PYG{p}{))}
+      \PYG{k}{except} \PYG{n+ne}{OSError}\PYG{p}{:}
+          \PYG{k}{pass}
+
+      \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{status}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Building Source and Wheel (universal) distribution…\PYGZsq{}}\PYG{p}{)}
+      \PYG{n}{os}\PYG{o}{.}\PYG{n}{system}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}\PYGZob{}0\PYGZcb{} setup.py sdist bdist\PYGZus{}wheel \PYGZhy{}\PYGZhy{}universal\PYGZsq{}}\PYG{o}{.}\PYG{n}{format}\PYG{p}{(}\PYG{n}{sys}\PYG{o}{.}\PYG{n}{executable}\PYG{p}{))}
+
+      \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{status}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Uploading the package to PyPi via Twine…\PYGZsq{}}\PYG{p}{)}
+      \PYG{n}{os}\PYG{o}{.}\PYG{n}{system}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}twine upload dist/*\PYGZsq{}}\PYG{p}{)}
+
+      \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{status}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Pushing git tags…\PYGZsq{}}\PYG{p}{)}
+      \PYG{n}{os}\PYG{o}{.}\PYG{n}{system}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}git tag v\PYGZob{}0\PYGZcb{}\PYGZsq{}}\PYG{o}{.}\PYG{n}{format}\PYG{p}{(}\PYG{n}{about}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}\PYGZus{}\PYGZus{}version\PYGZus{}\PYGZus{}\PYGZsq{}}\PYG{p}{]))}
+      \PYG{n}{os}\PYG{o}{.}\PYG{n}{system}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}git push \PYGZhy{}\PYGZhy{}tags\PYGZsq{}}\PYG{p}{)}
+
+      \PYG{n}{sys}\PYG{o}{.}\PYG{n}{exit}\PYG{p}{()}
+
+
+\PYG{n}{setup}\PYG{p}{(}
+  \PYG{n}{name}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}lockatme\PYGZsq{}}\PYG{p}{,}
+  \PYG{n}{version}\PYG{o}{=}\PYG{n}{about}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}\PYGZus{}\PYGZus{}version\PYGZus{}\PYGZus{}\PYGZsq{}}\PYG{p}{],}
+  \PYG{n}{description}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}Modulable screen locker\PYGZsq{}}\PYG{p}{,}
+  \PYG{n}{long\PYGZus{}description}\PYG{o}{=}\PYG{n}{long\PYGZus{}description}\PYG{p}{,}
+  \PYG{n}{author}\PYG{o}{=}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Pierre\PYGZhy{}Louis Sergent, David Anandanadaradja, \PYGZsq{}}
+         \PYG{l+s+s1}{\PYGZsq{}Matthieu Kirschleger, Sagar Gueye, Bruno Inec\PYGZsq{}}\PYG{p}{),}
+  \PYG{n}{author\PYGZus{}email}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}brunoinec@gmail.com\PYGZsq{}}\PYG{p}{,}
+  \PYG{n}{url}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}https://github.com/Sweenu/lockatme\PYGZsq{}}\PYG{p}{,}
+  \PYG{n}{packages}\PYG{o}{=}\PYG{n}{find\PYGZus{}packages}\PYG{p}{(}\PYG{n}{exclude}\PYG{o}{=}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}tests\PYGZsq{}}\PYG{p}{]),}
+  \PYG{n}{entry\PYGZus{}points}\PYG{o}{=}\PYG{p}{\PYGZob{}}\PYG{l+s+s1}{\PYGZsq{}console\PYGZus{}scripts\PYGZsq{}}\PYG{p}{:} \PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}lockatme = lockatme.\PYGZus{}\PYGZus{}main\PYGZus{}\PYGZus{}:main\PYGZsq{}}\PYG{p}{]\PYGZcb{},}
+  \PYG{n}{python\PYGZus{}requires}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}\PYGZgt{}=3.6.0\PYGZsq{}}\PYG{p}{,}
+  \PYG{n}{install\PYGZus{}requires}\PYG{o}{=}\PYG{n}{install\PYGZus{}requires}\PYG{p}{,}
+  \PYG{n}{tests\PYGZus{}require}\PYG{o}{=}\PYG{n}{tests\PYGZus{}require}\PYG{p}{,}
+  \PYG{n}{include\PYGZus{}package\PYGZus{}data}\PYG{o}{=}\PYG{n+nb+bp}{True}\PYG{p}{,}
+  \PYG{n}{license}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}MIT\PYGZsq{}}\PYG{p}{,}
+  \PYG{n}{classifiers}\PYG{o}{=}\PYG{p}{[}
+      \PYG{l+s+s1}{\PYGZsq{}Development Status :: 2 \PYGZhy{} Pre\PYGZhy{}Alpha\PYGZsq{}}\PYG{p}{,}
+      \PYG{l+s+s1}{\PYGZsq{}License :: OSI Approved :: MIT License\PYGZsq{}}\PYG{p}{,}
+      \PYG{l+s+s1}{\PYGZsq{}Intended Audience :: End Users/Desktop\PYGZsq{}}\PYG{p}{,}
+      \PYG{l+s+s1}{\PYGZsq{}Topic :: Desktop Environment :: Screen Savers\PYGZsq{}}\PYG{p}{,}
+      \PYG{l+s+s1}{\PYGZsq{}Programming Language :: Python\PYGZsq{}}\PYG{p}{,}
+      \PYG{l+s+s1}{\PYGZsq{}Programming Language :: Python :: 3\PYGZsq{}}\PYG{p}{,}
+      \PYG{l+s+s1}{\PYGZsq{}Programming Language :: Python :: 3.6\PYGZsq{}}\PYG{p}{,}
+      \PYG{l+s+s1}{\PYGZsq{}Programming Language :: Python :: Implementation :: CPython\PYGZsq{}}\PYG{p}{,}
+      \PYG{l+s+s1}{\PYGZsq{}Operating System :: POSIX :: Linux\PYGZsq{}}\PYG{p}{,}
+      \PYG{l+s+s1}{\PYGZsq{}Environment :: X11 Applications\PYGZsq{}}\PYG{p}{,}
+  \PYG{p}{],}
+  \PYG{n}{cmdclass}\PYG{o}{=}\PYG{p}{\PYGZob{}}\PYG{l+s+s1}{\PYGZsq{}upload\PYGZsq{}}\PYG{p}{:} \PYG{n}{UploadCommand}\PYG{p}{\PYGZcb{},}
+\PYG{p}{)}
+\end{Verbatim}

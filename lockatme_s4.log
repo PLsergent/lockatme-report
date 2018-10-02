@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Arch Linux) (preloaded format=pdflatex 2018.9.6)  2 OCT 2018 09:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Arch Linux) (preloaded format=pdflatex 2018.9.6)  2 OCT 2018 09:45
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1219,17 +1219,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 682--695
 
  []
 
-[16] (/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2018/09/02 1.7 listings language file
-)
-LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <8> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 733.
- [17]
+[16]
+\openout3 = `lockatme_s4.pyg'.
+
+
+(./_minted-lockatme_s4/4F85C38FF9ACC8A552AF9AF2CFE27CE1441FC57A5327D4ECF70CAC2E
+6200F695.pygtex) [17]
 Chapitre 4.
 [18
 
 ]
-<img/tree.png, id=88, 291.33844pt x 362.85562pt>
+<img/tree.png, id=87, 291.33844pt x 362.85562pt>
 File: img/tree.png Graphic file (type png)
 <use img/tree.png>
 Package pdftex.def Info: img/tree.png  used on input line 791.
@@ -1245,7 +1245,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 798--802
  []
 
 [19 <./img/tree.png (PNG copy)>]
-<img/readme.png, id=92, 990.70125pt x 901.3675pt>
+<img/readme.png, id=91, 990.70125pt x 901.3675pt>
 File: img/readme.png Graphic file (type png)
 <use img/readme.png>
 Package pdftex.def Info: img/readme.png  used on input line 814.
@@ -1259,35 +1259,48 @@ Underfull \hbox (badness 10000) in paragraph at lines 825--837
 
  []
 
-<img/facetrain.png, id=100, 764.8575pt x 615.29875pt>
+<img/facetrain.png, id=99, 764.8575pt x 615.29875pt>
 File: img/facetrain.png Graphic file (type png)
 <use img/facetrain.png>
 Package pdftex.def Info: img/facetrain.png  used on input line 839.
 (pdftex.def)             Requested size: 419.16621pt x 337.20421pt.
 [22 <./img/facetrain.png (PNG copy)>]
-<img/taiga2.png, id=104, 1842.885pt x 764.8575pt>
+<img/taiga2.png, id=103, 1842.885pt x 764.8575pt>
 File: img/taiga2.png Graphic file (type png)
 <use img/taiga2.png>
 Package pdftex.def Info: img/taiga2.png  used on input line 851.
 (pdftex.def)             Requested size: 419.16621pt x 173.9645pt.
-<img/taiga.png, id=105, 1840.8775pt x 735.74875pt>
+<img/taiga.png, id=104, 1840.8775pt x 735.74875pt>
 File: img/taiga.png Graphic file (type png)
 <use img/taiga.png>
 Package pdftex.def Info: img/taiga.png  used on input line 857.
 (pdftex.def)             Requested size: 419.16621pt x 167.52342pt.
  [23
 
- <./img/taiga2.png> <./img/taiga.png>] [24]
-runsystem(rm _minted-lockatme_s4/4F85C38FF9ACC8A552AF9AF2CFE27CE1441FC57A5327D4
+ <./img/taiga2.png> <./img/taiga.png>]
+\openout3 = `lockatme_s4.pyg'.
+
+
+(./_minted-lockatme_s4/67A6E686FB44245402A40CB28212CB70441FC57A5327D4ECF70CAC2E
+6200F695.pygtex) [24]
+\openout3 = `lockatme_s4.pyg'.
+
+
+(./_minted-lockatme_s4/8DDF7EC4738878BE564598AD711BFCD5441FC57A5327D4ECF70CAC2E
+6200F695.pygtex) [25]
+\openout3 = `lockatme_s4.pyg'.
+
+runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o _
+minted-lockatme_s4/93FE64F359D3A6FC99449E08721E5625441FC57A5327D4ECF70CAC2E6200
+F695.pygtex lockatme_s4.pyg)...executed.
+
+
+(./_minted-lockatme_s4/93FE64F359D3A6FC99449E08721E5625441FC57A5327D4ECF70CAC2E
+6200F695.pygtex [26])
+runsystem(rm _minted-lockatme_s4/30F468D827200939EB6F29EAEE5F6925441FC57A5327D4
 ECF70CAC2E6200F695.pygtex)...executed.
 
-runsystem(rm _minted-lockatme_s4/67A6E686FB44245402A40CB28212CB70441FC57A5327D4
-ECF70CAC2E6200F695.pygtex)...executed.
-
-runsystem(rm _minted-lockatme_s4/8DDF7EC4738878BE564598AD711BFCD5441FC57A5327D4
-ECF70CAC2E6200F695.pygtex)...executed.
-
- [25] (./lockatme_s4.aux)
+ [27] (./lockatme_s4.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -1295,15 +1308,15 @@ runsystem(rm lockatme_s4.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 22793 strings out of 492642
- 443057 string characters out of 6135567
- 880787 words of memory out of 5000000
- 26242 multiletter control sequences out of 15000+600000
- 20570 words of font info for 48 fonts, out of 8000000 for 9000
+ 22274 strings out of 492642
+ 437771 string characters out of 6135567
+ 767098 words of memory out of 5000000
+ 25716 multiletter control sequences out of 15000+600000
+ 20239 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 54i,7n,85p,847b,1567s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/t
-exmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texmf-dist/font
+ 54i,7n,85p,847b,1103s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/usr/share/
+texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texmf-dist/font
 s/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf-dist/fonts/type1/public/
 cm-super/sfbx1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx14
 40.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/sh
@@ -1313,10 +1326,9 @@ lic/cm-super/sfit1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sf
 rm0700.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></us
 r/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-d
 ist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/share/texmf-dist/fonts/type1
-/public/cm-super/sfst0800.pfb></usr/share/texmf-dist/fonts/type1/public/cm-supe
-r/sfti1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt0800.pfb>
-</usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on lockatme_s4.pdf (26 pages, 1047671 bytes).
+/public/cm-super/sfti1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-supe
+r/sftt1000.pfb>
+Output written on lockatme_s4.pdf (28 pages, 982960 bytes).
 PDF statistics:
  172 PDF objects out of 1000 (max. 8388607)
  114 compressed objects within 2 object streams
