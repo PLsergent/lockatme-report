@@ -12,6 +12,7 @@
 \usepackage{listings}
 \usepackage{enumitem}
 \usepackage{xcolor}
+\usepackage{pythonhighlight}
 \definecolor{blue}{RGB}{51,131,255}
 \newcommand\tab[1][1cm]{\hspace*{#1}}
 \usepackage[skins]{tcolorbox}
@@ -728,7 +729,7 @@ Quant aux coroutines, nous avons décidé de ne pas utiliser ce processus car l'
 \\
 Après de nombreux tests sur l'approche à utiliser. Nous avons finis par aboutir sur ce code:
 
-  \begin{minted}{python}
+  \begin{python}
       def add_event(func, event, args_dict):
           def f():
               func(**args_dict)
@@ -747,7 +748,7 @@ Après de nombreux tests sur l'approche à utiliser. Nous avons finis par abouti
               t.start()
 
           authenticated.wait()
-    \end{minted}
+    \end{python}
 
 On crée un objet \emph{threading.Event} dans le programme principal. Tous les modules
 utilisés ont accès à l'objet et peuvent "setter" le flag interne à celui-ci de façon
@@ -842,6 +843,8 @@ semble être pour le moment en dehors de notre portée.
 
 \section{Le futur de lockatme - conclusion}
 
+
+
 \chapter*{Annexe}
 
 \begin{figure}[h]\label{fig:Taiga}
@@ -858,7 +861,7 @@ semble être pour le moment en dehors de notre portée.
 
 \newpage
 
-\begin{minted}{python}
+\begin{python}
 #=====facial_recognition.py=====
   import face_recognition as face
   import cv2
@@ -892,11 +895,11 @@ semble être pour le moment en dehors de notre portée.
               camera.release()
               cv2.destroyAllWindows()
               return
-\end{minted}
+\end{python}
 
 \newpage
 
-\begin{minted}{python}
+\begin{python}
 #=====lock.py=====#
 from Xlib import X, display
 
@@ -931,6 +934,6 @@ def lock(display: display.Display):
       lock_screen(display, screen)
   display.sync()
 
-\end{minted}
+\end{python}
 
 \end{document}
