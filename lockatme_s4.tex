@@ -156,7 +156,7 @@ Lors de la réalisation du cahier des charges, nous avions réfléchi à la mise
 place d'une méthodologie agile: SCRUM, afin de conserver une bonne visibilité sur le
 projet. Ainsi, nous souhaitions réaliser des cycles; un cycle correspondant au
 lapse de temps entre deux réunions avec le tuteur; pour que ce dernier soit au
-maximum impliqué dans le projet et puisse nous aiguiller en cas de problème.
+maximum impliqué dans le projet et qu'il puisse nous aiguiller en cas de problème.
 \\
 \\
 La méthodologie SCRUM implique également une intégration continue pour faire
@@ -200,7 +200,7 @@ pour autant tout faire \emph{cf. 2.2.2 Liste des tâches}).
 
 \subsection{Rétrospective - diagramme de Gantt specification}
 Voir ci dessous le diagramme de Gantt que nous avions réalisé lors du cahier
-des charges pour le S2.\\
+des charges pour le S2.
 
 \begin{figure}[h]\label{fig:gantt}
   \includegraphics[width=\linewidth]{Gantt}
@@ -246,7 +246,7 @@ qui pouvait théoriquement nous servir pour le développement.\\
   \item{\textbf{Exploitation des recherches, mise en commun}}\\
 Par la suite, les nombreuses heures de recherches(\emph{cf. 2.2.2 Liste des tâches}) ne nous avançaient guère pour la
 réalisation de notre projet. Il était difficile d'avoir une vision sur le long
-terme, quand nous stagnions parfois plusieurs jours sur un aspect compliqué. Il
+terme, quand nous stagnions, parfois plusieurs jours, sur un aspect compliqué. Il
 n'était pas évident de savoir concrètement à quoi allait nous servir certaines
 connaissances (beaucoup n'ont finalement pas été utile). La mise
 en commun prenant beaucoup de temps. Il était parfois nécessaire de rédiger un
@@ -271,23 +271,23 @@ réaliser le code le plus pertinent possible, dans le cadre de la philosophie de
 
   \item{\textbf{Impliquation de tout le groupe}}\\
 Evidemment vu la liste qui est en train d'être faite, il est assez simple de deviner
-que cette phase à été bien compliqué pour certains membres du groupe, qui ont pu
+que cette phase a été bien compliqué pour certains membres du groupe, qui ont pu
 prendre du retard dans la compréhension de l'avancement. Mais il était quand même
 important de tenir tout le monde informé, notamment à travers des réunions régulières.
 La part de développement de chacun était inégale, mais il était essentiel que
-tout le monde apporte sa contribution au projet. De plus les personnes moins à l'aise
-compensaient avec des tâches liées à la gestion du projet. De plus il est essentiel que chaque membre ait
+tout le monde apporte sa contribution au projet. Les personnes moins à l'aise
+compensaient avec des tâches liées à la gestion du projet. De plus, il est essentiel que chaque membre ait
 connaissance des aspects techniques de l'application.\\
 
   \item{\textbf{Répartition des tâches lors du développement}}\\
 En lien avec le point précédent et avec un paragraphe du 2.2, dans le développement
-final il y avait assez peu de code (même si très complexe). Il n'y avait pas de
+final il y avait assez peu de code (même si très complexe \emph{cf. 3.2}). Il n'y avait pas de
 séparation possible avec differentes couches, comme peu nous offrir le modèle MVC
 par exemple. C'est donc essentiellement le chef de groupe qui a implémenté la partie
 finale(\emph{cf. 2.2.2 Liste des tâches}). Cela ne veut pas dire qu'il a fait tout
 le travail étant donné que les recherches de chacuns ont été prises en compte. Il
 faut garder à l'esprit que dans ce projet la partie de reflexion et de recherche
-représente 90\% du temps de travail.\\
+représente 80\% du temps de travail.\\
 
 \end{itemize}
 
@@ -313,7 +313,7 @@ représente 90\% du temps de travail.\\
 En nous penchant sur des applications de lock sous Linux, telles que i3lock,
 lightDM, nous nous sommes rendus compte qu’elles utilisent toute PAM.
 Ce dernier permet au travers de configs files, contenant des modules, de
-gérer l’authentification. Les applications font appels à PAM en passant en
+gérer l’authentification. Les applications font appel à PAM en passant en
 paramètre le nom de la config file, qui elle même contient des modules
 d’authentification.
 
@@ -340,7 +340,7 @@ Après les types groups, sur la même ligne, vient la "control value", qui va
 définir le comportement de l’application en fonction des valeurs de retour des
 modules. Par exemple: required, sufficient, include, optional… Après la control
 value vient le nom du module PAM utilisé. Ensuite le quatrième argument
-constitue des options diverses que nous ne détailleront pas ici car inutile
+constitue des options diverses que nous ne détailleront pas ici, car inutile
 pour notre projet.
 \\ \\
     Exemple: system-auth \\
@@ -372,8 +372,8 @@ Sur l’exemple du dessus on voit que le troisième argument de chaque ligne est
 un module PAM. Il est possible d’écrire soit même un module en C. C’est ce qui
 est traité dans cette partie. Cependant cet aspect est très lourd à comprendre.
 Nous nous sommes donc reposé sur des exemples tel que le repository simple-pam
-trouvé sur github. On a donc pu comprendre que chaque type group peut être
-gérer avec une fonction qui peut retourner \texttt{PAM\_SUCCESS ou PAM\_ERR}.
+trouvé sur github(https://github.com/beatgammit/simple-pam). On a donc pu comprendre que chaque type group peut être
+gérer avec une fonction qui retourne \texttt{PAM\_SUCCESS ou PAM\_ERR}.
 \\ \\
     Exemple:
 
@@ -588,7 +588,7 @@ int main () {
   bibliothèque interface pour l’implémentation en C du protocole X. Il se
   trouve qu’il existe des bindings Python pour cette bibliothèque. De plus nous
   nous sommes rendus compte que sxlock est en fait un fork du projet slock, un
-  locker assez basique qui n’utilise pas PAM.
+  locker assez basique qui n’utilise pas PAM. Il était donc possible de se passer de PAM.
 \\
   En parallèle les recherches sur Python.h montre qu’il est difficile
   d’utiliser cette bibliothèque pour écrire un module PAM.
@@ -597,13 +597,12 @@ int main () {
 \newpage
   \textbf{Abandon de PAM}\\
 
-  Notre but étant de faire une application en Python nous avons donc pris à ce
+  Notre but étant de faire une application en Python, nous avons donc pris à ce
   moment un virage très serré en abandonnant l’idée d’utiliser PAM pour le
-  déverrouillage de lockatme. En effet, à ce moment là il fallait soit écrire un
+  déverrouillage de lockatme. En effet, à ce moment là, il fallait soit écrire un
   module PAM en C soit utiliser le module \texttt{pam\_authenticate}. Nous
-  manquions de temps et l’utilisation de bindings Xlib semblait donc être plus
-  simple. Cette solution correspondait mieux à l’esprit du
-  projet.
+  manquions de temps et l’utilisation des bindings python de Xlib semblait donc être plus
+  simple. Cette solution correspondait mieux à l’esprit du projet.
 
   \vspace{0.5cm}
 
@@ -692,7 +691,7 @@ Peu d'applications utilisent la Xlib directement ; en général, elles exploiten
 d'autres bibliothèques qui reposent sur la Xlib pour fournir des éléments
 d'une interface graphique.\\
 Cette bibliothèque est apparue autour de 1985.\\\\
-Les versions les plus récentes de plusieurs distributions majeurs de Linux utilisent
+Les versions les plus récentes de plusieurs distributions majeures de Linux utilisent
 aujourd'hui \emph{Wayland} plutôt que \emph{X}. Mais \emph{X} détient toujours de loin la plus
 grande part d'utilisation. De plus, les programmes codés pour \emph{X} fonctionne
 sur \emph{Wayland} grâce au programme de compatibilité \emph{XWayland}. Le contraire n'est pas
@@ -711,28 +710,28 @@ locker par mot de passe par exemple).
 \emph{X} possède en réalité deux API. \emph{Xlib} est très utilisée et plutôt
 simple dans son design.
 C'est elle que nous avons utilisés. L'API plus récente, \emph{XCB}, présente un
-avantage conséquent de performance sur des grosses applications de par son design
-plus complexe mais ça ne change rien pour nous. De plus l'API est encore
-très partiellement documentée.
+avantage conséquent de performance sur des grosses applications, de par son design
+plus complexe, mais à notre échelle, cela importait peu. De plus l'API est encore
+très partiellement documenté.
 
-La difficultée se trouve dans le fait que contrairement à une bibliothéque/framework
+La difficulté se trouve dans le fait que contrairement à une bibliothéque/framework
 graphique haut niveau, communiquer avec le serveur graphique directement est
-beaucoup plus compexe et font intervenir des concepts singuliers, pas toujours
-simple à saisir.
+beaucoup plus complexe et fait intervenir des concepts singuliers, pas toujours
+simple à saisir. (Voir code en \emph{Annexe: lock.py})
 
 \subsection{Difficultées rencontrée - parallel programming}
 Nous souhaitions avoir un locker modulable, qui peut être délocké de plusieurs
 façons différentes selon le choix de l'utilisateur (e.g. facial recognition
-+ fingerprint reader). Pour cela il nous a fallut choisir une méthode de programmation
-parallèle entre les trois choix à disposition avec Python, le multi-processing,
-multi-threading ou les coroutines.
++ fingerprint reader). Pour cela il nous a fallu choisir une méthode de programmation
+parallèle. Les trois choix à disposition pour Python sont le multi-processing,
+le multi-threading et les coroutines.
 
 Nous aurions pu utiliser le multi-processing tout comme le multi-threading mais avons donc
 opté pour le multi-threading (processus légers) pour utiliser moins de ressources.\\
 Quant aux coroutines, nous avons décidé de ne pas utiliser ce processus car l'implémentation
 était bien plus compliquée.
 \\
-Après de nombreux tests sur l'approche à utiliser. Nous avons finis par aboutir sur ce code:
+Après de nombreux tests sur l'approche à utiliser. Nous avons fini par aboutir sur ce code:
 
   \begin{minted}{python}
       def add_event(func, event, args_dict):
@@ -758,7 +757,7 @@ Après de nombreux tests sur l'approche à utiliser. Nous avons finis par abouti
 On crée un objet \emph{threading.Event} dans le programme principal. Tous les modules
 utilisés ont accès à l'objet et peuvent "setter" le flag interne à celui-ci de façon
 à prévenir le proramme principal si l'utilisateur s'est authentifié avec succès.
-Le programme principal attent tout simplement que le flag soit set puis se termine.
+Le programme principal attend tout simplement que le flag soit set puis se termine.
 
 \chapter{Version finale}
 
@@ -772,24 +771,24 @@ en utilisant la reconnaissance faciale grâce à une webcam et une photo placée
 en amont dans un dossier spécifique (\emph{cf. 4.3}). L'utilisateur peut également déverrouiller
 son écran avec un mot de passe indépendamment de la reconnaissance faciale. C'est
 à dire qu'il y a une utilisation de multithread (\emph{cf. 3.2.3}).
-La nouvelle idée qui a émergé durant la phase de développement réside dans
+L'innovation qui a émergé durant la phase de développement réside dans
 l'aspect modulable de l'application, en laissant la possibilité aux utilisateurs
-de fork le projet pour créer un module permettant une nouvelle manière de
+de fork le projet pour créer de nouveaux modules, permettant de proposer de nouvelles manières pour
 déverrouiller la machine.\\
 L'application possède tout de même quelques points faibles en ce qui concerne la
 sécurité et la rapidité de la reconnaissance, assez lente à cause des webcams
 d'ordinateur, souvent moins performante.
 
 \section{Structure du projet}
-Lockatme se découpe en plusieurs fichier. Le fichier \_\_main\_\_.py est un fichier
+Lockatme se découpe en plusieurs fichier. Le fichier \texttt{\_\_main\_\_.py} est un fichier
 spécial en Python, il est le point d'entrée de notre programme. Le fichier \textbf{cli.py}
 définit le comportement de la commande "lockatme", c'est-à-dire, les différents
 arguments et options disponibles.
 Le fichier \textbf{lock.py} contient la fonction de locking qui fait appel à Xlib (\emph{cf. Annexe}).
 Le fichier \textbf{auth.py} s'occupe de lire le fichier de configuration de l'utilisateur
 puis de lancer les différents threads, chacun faisant appel à la fonction
-d'authentification d'un module. Ces fonctions sont définites dans le
-fichier du nom du module, dans le dossier unlockers (e.g. unlockers/password.py).
+d'authentification d'un module. Ces fonctions sont définies dans les
+fichiers portant le même nom, dans le dossier unlockers (e.g. unlockers/password.py).
 
 \begin{figure}[h]\label{fig:tree}
 \begin{center}
@@ -803,7 +802,7 @@ fichier du nom du module, dans le dossier unlockers (e.g. unlockers/password.py)
 Le détail de l'utilisation de lockatme est présent sur le repository GitHub :\\
 https://github.com/lockatme/lockatme.\\\\
 Il suffisait d'une simple commande définit dans le setup.py pour upload sur PyPI (setup.py upload \emph{cf Annexe}).
-L'installation peut donc se faire directement grâce à \textbf{pip} :
+L'installation peut donc se faire directement grâce à \texttt{pip} :
 \begin{lstlisting}[language=bash]
   $ pip install lockatme
 \end{lstlisting}
@@ -812,7 +811,7 @@ Ensuite dans le fichier configuration, qui se trouve dans \verb|~/.config/lockat
 il est possible de choisir son moyen de déverrouillage sous la section \textbf{[unlockers]}.
 \\
 L'utilisateur pourra définir directement dans le fichier le \emph{path} vers la photo qui servira
-de modèle dans le cas de la reconnaissance faciale (sous la spécification du module). Le mot de passe, lui, sera celui de
+de modèle, dans le cas de la reconnaissance faciale (sous la spécification du module). Le mot de passe, lui, sera celui de
 la session active.
 
 \begin{figure}[h]\label{fig:readme}
@@ -863,13 +862,19 @@ dans une moindre mesure.
 Sur la partie management et compétences liées au développement:\\
 Le projet a été d'autant plus bénéfique sur cet aspect. Chacuns a pu appréhender
 la rédaction d'un cahier des charges, la méthodologie Scrum et la communication
-au sein d'une équipe pour un projet à long terme. Mais surtout les compétences liées
-au développement telle que la maîtrise avancée de Git et GitHub, à travers notamment
+au sein d'une équipe pour un projet à long terme. L'apprentissage des compétences liées
+au développement, est aussi présent, telle que la maîtrise avancée de Git et GitHub, à travers notamment
 l'intégration continue (rédaction de tests) et le travail sur diverses branches aboutissant à des pulls
 requests. Il a donc fallu apprendre à travailler en équipe avec ces outils mais aussi
 il a fallu apprendre à communiquer avec d'autres outils: Taiga et Discord.
 Le projet nous a également montré comment réagir face à l'inconnu total et nous
 a aider à améliorer nos capacités de recherches.
+\\\\
+On peut donc dire que, malgré l'aspect très technique du projet, et la compléxité
+de sa mise en place, en lien avec les difficultés de management, chacuns a pu apprendre.
+Cette expérience a été sans aucun doute bénéfique pour tous les membres du groupe.
+
+
 
 
 \chapter*{Annexe}
