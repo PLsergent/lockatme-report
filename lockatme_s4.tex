@@ -594,24 +594,25 @@ int main () {
   d’utiliser cette bibliothèque pour écrire un module PAM.
 
   \vspace{0.5cm}
-\newpage
-  \textbf{Abandon de PAM}\\
 
-  Notre but étant de faire une application en Python, nous avons donc pris à ce
-  moment un virage très serré en abandonnant l’idée d’utiliser PAM pour le
-  déverrouillage de lockatme. En effet, à ce moment là, il fallait soit écrire un
+  \textbf{Abandon de PAM (pour la reconnaissance faciale)}\\
+
+  Notre but étant de faire une application en Python nous avons donc pris à ce
+  moment un virage très serré en abandonnant l’idée d’utiliser PAM pour l'authentification
+  par reconnaissance faciale. En effet, à ce moment là il fallait soit écrire un
   module PAM en C soit utiliser le module \texttt{pam\_authenticate}. Nous
-  manquions de temps et l’utilisation des bindings python de Xlib semblait donc être plus
-  simple. Cette solution correspondait mieux à l’esprit du projet.
+  manquions de temps. Nous utilisons donc PAM seulement pour l'authentification par
+  mot de passe en utilisant la bibliothèque \emph{pamela} facilite l'utilisation
+  de PAM dans du code Python.
 
   \vspace{0.5cm}
 
   \textbf{Xlib}\\
 
   Suite à ce virage compliqué il était difficile de bien répartir les tâches.
-  Chacun à donc réalisé des recherches sur Xlib et sur les bindings mais la
-  répartition compliquée et la difficulté de la tâche restante c’est
-  Bruno notre chef de projet qui a implémenté la version finale de lockatme en
+  Chacun à donc réalisé des recherches sur Xlib et sur les bindings mais vu la
+  répartition compliquée et la difficulté de la tâche restante, c’est
+  Bruno, notre chef de projet, qui a implémenté la version finale de lockatme en
   rassemblant les connaissances réunis par le groupe et en utilisant
   l’algorithme de reconnaissance faciale du S2 (\emph{cf. Annexe}).
   Ce point sera développé dans le 4.
