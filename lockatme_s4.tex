@@ -166,7 +166,7 @@ différentes branches sur la branche master.
 
 \subsection{Application réelle au projet}
 La réalisation du projet en lui même a nécessité de longues heures de recherches
-individuelles (\emph{cf. 2.2.2 Liste des tâches}), notamment pour lire de la documentation et faire des "boûts" de
+individuelles (\emph{cf. 2.2.2 Liste des tâches}), notamment pour lire de la documentation et faire des "bouts" de
 code afin de mieux cerner ce que nous allions faire. C'est pourquoi la phase de développement à
 été plus courte que prévu.
 \\
@@ -256,22 +256,22 @@ pouvoir les exploiter et de déterminer si oui ou non elles seront utiles.\\
   \item{\textbf{Compréhension, avancement éparse}}\\
 Et donc suite à cela, venait le temps de la compréhension. Certains aspects techniques
 liés à l'architecture linux bloquaient certains. L'évolution des connaissances de
-chacun était assez éparpillé. De plus en plus, chacun recherchait de son propre
+chacun était assez éparpillée. De plus en plus, chacun recherchait de son propre
 côté en fonction de ses avancements. Cela à mener à une dispersion, néfaste pour
 l'intérêt commun du groupe.\\
 
   \item{\textbf{Changement fréquent de stratégie suite à de nouvelles découvertes}}\\
-Nos avancements nous ont irrémédiablement mené à changer d'idée plusieurs fois
+Nos avancements nous ont irrémédiablement menés à changer d'idée plusieurs fois
 pour le développement (\emph{cf. 2.2.2 Chronologie}). Il était donc assez
 frustrant de se rendre compte que des heures de travail ne seront peut être pas
-utilisés concrètement dans le rendu final. Mais cela fait partie du projet,
+utilisées concrètement dans le rendu final. Mais cela fait partie du projet,
 c'est à dire que pour en arriver au meilleur résultat possible, il était important
 d'explorer toutes les pistes possibles pour découvrir de nouvelles choses et ainsi
 réaliser le code le plus pertinent possible, dans le cadre de la philosophie de lockatme.\\
 
   \item{\textbf{Impliquation de tout le groupe}}\\
 Evidemment vu la liste qui est en train d'être faite, il est assez simple de deviner
-que cette phase a été bien compliqué pour certains membres du groupe, qui ont pu
+que cette phase a été bien compliquée pour certains membres du groupe, qui ont pu
 prendre du retard dans la compréhension de l'avancement. Mais il était quand même
 important de tenir tout le monde informé, notamment à travers des réunions régulières.
 La part de développement de chacun était inégale, mais il était essentiel que
@@ -282,7 +282,7 @@ connaissance des aspects techniques de l'application.\\
   \item{\textbf{Répartition des tâches lors du développement}}\\
 En lien avec le point précédent et avec un paragraphe du 2.2, dans le développement
 final il y avait assez peu de code (même si très complexe \emph{cf. 3.2}). Il n'y avait pas de
-séparation possible avec differentes couches, comme peu nous offrir le modèle MVC
+séparation possible avec differentes couches, comme peut nous offrir le modèle MVC
 par exemple. C'est donc essentiellement le chef de groupe qui a implémenté la partie
 finale(\emph{cf. 2.2.2 Liste des tâches}). Cela ne veut pas dire qu'il a fait tout
 le travail étant donné que les recherches de chacuns ont été prises en compte. Il
@@ -371,7 +371,7 @@ pour notre projet.
 Sur l’exemple du dessus on voit que le troisième argument de chaque ligne est
 un module PAM. Il est possible d’écrire soit même un module en C. C’est ce qui
 est traité dans cette partie. Cependant cet aspect est très lourd à comprendre.
-Nous nous sommes donc reposé sur des exemples tel que le repository simple-pam
+Nous nous sommes donc reposés sur des exemples tel que le repository simple-pam
 trouvé sur github(https://github.com/beatgammit/simple-pam). On a donc pu comprendre que chaque type group peut être
 gérer avec une fonction qui retourne \texttt{PAM\_SUCCESS ou PAM\_ERR}.
 \\ \\
@@ -487,16 +487,16 @@ int main(int argc, char *argv[]) {
   le module \texttt{pam\_unix.so} qui permet également de faire une
   vérification par mot de passe.
 \\ \\
-  Mais nous nous heurtons à un problème, tous les modules PAM sont écrit en C
+  Mais nous nous heurtons à un problème, tous les modules PAM sont écrits en C
   et notre algorithme de reconnaissance faciale est en Python. Il nous fallait
   donc un module en C qui permettrait de demander une reconnaissance faciale en
   guise d’authentification.
 \\ \\
   Suite à des recherches nous trouvons un module déjà écrit en C:
-\texttt{pam\_authentication}. Ce module très bien fait possède une interface
+\texttt{pam\_authentication}. Ce module possède une interface
 graphique pour "entraîner" le programme avec des visages capturés avec la
 webcam. Nous utilisons donc ce module pour des programmes simples qui simulent un
-verrouillage dans la CLI,  une fois lancé il demandent une reconnaissance faciale,
+verrouillage dans la CLI,  une fois lancés il demandent une reconnaissance faciale,
 et en cas d’échec demandent un mot de passe. Ensuite nous avons pu modifier un
 locker déjà existant, en implémentant deux \texttt{pam\_start} différent,
 chacun se lançant indépendamment en fonction du choix de l’utilisateur:
@@ -579,7 +579,7 @@ int main () {
 
   \textbf{Locker}\\
 
-  Lors des recherches pour écrire le locker, nous nous sommes inspiré de la même
+  Lors des recherches pour écrire le locker, nous nous sommes inspirés de la même
   application que celle utilisée auparavant, pour ajouter la solution de
   reconnaissance faciale. Il s’agit de sxlock. C’est un locker qui se
   veut simple et qui fait appel à PAM. L’écriture d’un programme de
@@ -590,7 +590,7 @@ int main () {
   nous sommes rendus compte que sxlock est en fait un fork du projet slock, un
   locker assez basique qui n’utilise pas PAM. Il était donc possible de se passer de PAM.
 \\
-  En parallèle les recherches sur Python.h montre qu’il est difficile
+  En parallèle les recherches sur Python.h montrent qu’il est difficile
   d’utiliser cette bibliothèque pour écrire un module PAM.
 
   \newpage
@@ -694,7 +694,7 @@ d'une interface graphique.\\
 Cette bibliothèque est apparue autour de 1985.\\\\
 Les versions les plus récentes de plusieurs distributions majeures de Linux utilisent
 aujourd'hui \emph{Wayland} plutôt que \emph{X}. Mais \emph{X} détient toujours de loin la plus
-grande part d'utilisation. De plus, les programmes codés pour \emph{X} fonctionne
+grande part d'utilisation. De plus, les programmes codés pour \emph{X} fonctionnent
 sur \emph{Wayland} grâce au programme de compatibilité \emph{XWayland}. Le contraire n'est pas
 possible.
 
@@ -710,7 +710,7 @@ locker par mot de passe par exemple).
 
 \emph{X} possède en réalité deux API. \emph{Xlib} est très utilisée et plutôt
 simple dans son design.
-C'est elle que nous avons utilisés. L'API plus récente, \emph{XCB}, présente un
+C'est elle que nous avons utilisée. L'API plus récente, \emph{XCB}, présente un
 avantage conséquent de performance sur des grosses applications, de par son design
 plus complexe, mais à notre échelle, cela importait peu. De plus l'API est encore
 très partiellement documenté.
@@ -718,9 +718,9 @@ très partiellement documenté.
 La difficulté se trouve dans le fait que contrairement à une bibliothéque/framework
 graphique haut niveau, communiquer avec le serveur graphique directement est
 beaucoup plus complexe et fait intervenir des concepts singuliers, pas toujours
-simple à saisir. (Voir code en \emph{Annexe: lock.py})
+simples à saisir. (Voir code en \emph{Annexe: lock.py})
 
-\subsection{Difficultées rencontrée - parallel programming}
+\subsection{Difficultées rencontrées - parallel programming}
 Nous souhaitions avoir un locker modulable, qui peut être délocké de plusieurs
 façons différentes selon le choix de l'utilisateur (e.g. facial recognition
 + fingerprint reader). Pour cela il nous a fallu choisir une méthode de programmation
@@ -778,10 +778,10 @@ de fork le projet pour créer de nouveaux modules, permettant de proposer de nou
 déverrouiller la machine.\\
 L'application possède tout de même quelques points faibles en ce qui concerne la
 sécurité et la rapidité de la reconnaissance, assez lente à cause des webcams
-d'ordinateur, souvent moins performante.
+d'ordinateur, souvent moins performantes.
 
 \section{Structure du projet}
-Lockatme se découpe en plusieurs fichier. Le fichier \textbf{\_\_main\_\_.py} est un fichier
+Lockatme se découpe en plusieurs fichiers. Le fichier \textbf{\_\_main\_\_.py} est un fichier
 spécial en Python, il est le point d'entrée de notre programme. Le fichier \textbf{cli.py}
 définit le comportement de la commande "lockatme", c'est-à-dire, les différents
 arguments et options disponibles.
@@ -802,7 +802,7 @@ fichiers portant le même nom, dans le dossier unlockers (e.g. unlockers/passwor
 \section{Utilisation - mode d'emploi}
 Le détail de l'utilisation de lockatme est présent sur le repository GitHub :\\
 https://github.com/lockatme/lockatme.\\\\
-Il suffisait d'une simple commande définit dans le \textbf{setup.py} pour
+Il suffisait d'une simple commande définie dans le \textbf{setup.py} pour
 upload sur \texttt{PyPI} (\emph{setup.py upload} cf Annexe).
 L'installation peut donc se faire directement grâce à \texttt{pip} :
 \begin{lstlisting}[language=bash]
@@ -823,7 +823,7 @@ la session active.
 \end{figure}
 
 
-\chapter{Amélioration possible - conclusion}
+\chapter{Améliorations possibles - conclusion}
 
 \newpage
 
@@ -856,13 +856,13 @@ utilisable au quotidien. De plus le code est open-source et modulable, il est
 donc possible qu'une tierse personne fork le projet pour continuer à le faire vivre.\\
 
 Concernant le groupe si nous devions conclure sur la partie technique:\\
-Le projet a été très compliqué a cerner, la plus grande partie du travail consistait
+Le projet a été très compliqué à cerner, la plus grande partie du travail consistait
 à faire des recherches sur des sujets inconnus. Nous pouvons donc dire que le projet
 nous a appris énormément de choses sur l'OS Linux (très bas niveaux), sur Python et sur le C
 dans une moindre mesure.
 \\\\
 Sur la partie management et compétences liées au développement:\\
-Le projet a été d'autant plus bénéfique sur cet aspect. Chacuns a pu appréhender
+Le projet a été d'autant plus bénéfique sur cet aspect. Chacun a pu appréhender
 la rédaction d'un cahier des charges, la méthodologie Scrum et la communication
 au sein d'une équipe pour un projet à long terme. L'apprentissage des compétences liées
 au développement, est aussi présent, telle que la maîtrise avancée de Git et GitHub, à travers notamment
@@ -873,13 +873,12 @@ Le projet nous a également montré comment réagir face à l'inconnu total et n
 a aidé à améliorer nos capacités de recherches.
 \\\\
 On peut donc dire que, malgré l'aspect très technique du projet, et la compléxité
-de sa mise en place, en lien avec les difficultés de management, chacuns a pu apprendre.
+de sa mise en place, en lien avec les difficultés de management, chacun a pu apprendre.
 Cette expérience a été sans aucun doute bénéfique pour tous les membres du groupe.
 
 
-
-
-\chapter*{Annexe}
+\chapter{Annexes}
+\newpage
 
 \begin{figure}[h]\label{fig:Taiga}
   \includegraphics[width=\linewidth]{taiga2}
@@ -897,6 +896,7 @@ Cette expérience a été sans aucun doute bénéfique pour tous les membres du 
 
 \begin{minted}{python}
 #=====facial_recognition.py=====
+
   import face_recognition as face
   import cv2
 
@@ -935,6 +935,7 @@ Cette expérience a été sans aucun doute bénéfique pour tous les membres du 
 
 \begin{minted}{python}
 #=====lock.py=====#
+
 from Xlib import X, display
 
 
@@ -972,6 +973,7 @@ def lock(display: display.Display):
 \newpage
 \begin{minted}{python}
 #=====setup.py=====
+
 #!/usr/bin/env python
 import os
 import sys

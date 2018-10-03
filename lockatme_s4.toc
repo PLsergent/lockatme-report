@@ -24,11 +24,12 @@
 \contentsline {section}{\numberline {3.2}Technologie utilis\IeC {\'e}e \IeC {\textendash } point technique}{17}
 \contentsline {subsection}{\numberline {3.2.1}Xlib - pr\IeC {\'e}sentation}{17}
 \contentsline {subsection}{\numberline {3.2.2}Utilisation dans le projet}{17}
-\contentsline {subsection}{\numberline {3.2.3}Difficult\IeC {\'e}es rencontr\IeC {\'e}e - parallel programming}{18}
+\contentsline {subsection}{\numberline {3.2.3}Difficult\IeC {\'e}es rencontr\IeC {\'e}es - parallel programming}{18}
 \contentsline {chapter}{\numberline {4}Version finale}{19}
 \contentsline {section}{\numberline {4.1}Pr\IeC {\'e}sentation}{20}
 \contentsline {section}{\numberline {4.2}Structure du projet}{20}
 \contentsline {section}{\numberline {4.3}Utilisation - mode d'emploi}{21}
-\contentsline {chapter}{\numberline {5}Am\IeC {\'e}lioration possible - conclusion}{22}
+\contentsline {chapter}{\numberline {5}Am\IeC {\'e}liorations possibles - conclusion}{22}
 \contentsline {section}{\numberline {5.1}Interface graphique}{23}
 \contentsline {section}{\numberline {5.2}Le futur de lockatme - conclusion}{24}
+\contentsline {chapter}{\numberline {6}Annexes}{25}

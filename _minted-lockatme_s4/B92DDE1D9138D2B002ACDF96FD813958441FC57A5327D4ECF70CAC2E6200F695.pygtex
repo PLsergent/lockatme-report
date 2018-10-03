@@ -1,5 +1,6 @@
 \begin{Verbatim}[commandchars=\\\{\}]
 \PYG{c+c1}{\PYGZsh{}=====lock.py=====\PYGZsh{}}
+
 \PYG{k+kn}{from} \PYG{n+nn}{Xlib} \PYG{k+kn}{import} \PYG{n}{X}\PYG{p}{,} \PYG{n}{display}
 
 
